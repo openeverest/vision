@@ -65,7 +65,7 @@ export default function TypingAnimation() {
           display: 'inline-block',
         }}
       >
-        OpenEverest is{' '}
+        OpenEverest is {' '}
       </Typography>
       <Typography
         component="span"
