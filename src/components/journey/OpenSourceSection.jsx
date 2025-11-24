@@ -7,7 +7,7 @@ export default function OpenSourceSection({ sectionRef }) {
     {
       number: 1,
       title: "Foster Community",
-      description: "We're committed to true open source. Our plan is to donate OpenEverest to the Cloud Native Computing Foundation (CNCF) and guide it through the incubation process. This ensures the project remains community-driven, vendor-neutral, and aligned with cloud-native best practices. By joining the CNCF ecosystem, we'll connect with a vibrant community of contributors, users, and organizations who share our vision for open database management."
+      description: "We're committed to true open source. Our plan is to donate OpenEverest to the Cloud Native Computing Foundation (CNCF) and guide it through the incubation process. This ensures the project remains community-driven, vendor-neutral, and aligned with cloud-native best practices. By joining the CNCF ecosystem, we'll connect with contributors, users, and organizations who share our vision for open data management."
     },
     {
       number: 2,
