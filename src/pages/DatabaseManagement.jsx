@@ -48,7 +48,7 @@ export default function DatabaseManagement() {
   const [darkMode, setDarkMode] = useState(false)
 
   return (
-    <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: '#f5f5f5' }}>
+    <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: '#fafafa', fontFamily: 'Roboto, sans-serif' }}>
       {/* App Bar */}
       <AppBar
         position="fixed"
@@ -133,7 +133,7 @@ export default function DatabaseManagement() {
         <Toolbar />
 
         <Container maxWidth="xl" sx={{ mt: 2 }}>
-          <Paper sx={{ p: 2 }}>
+          <Paper sx={{ p: 3, borderRadius: 1, boxShadow: '0px 2px 4px rgba(0,0,0,0.1)' }}>
             {/* Toolbar */}
             <Box sx={{ display: 'flex', gap: 1, mb: 2, justifyContent: 'flex-end' }}>
               <IconButton size="small">
@@ -182,10 +182,10 @@ export default function DatabaseManagement() {
                         </svg>
 
                         <Stack alignItems="center" spacing={1}>
-                          <Typography variant="body1" color="text.secondary">
+                          <Typography variant="body1" sx={{ color: '#666', fontSize: '0.875rem' }}>
                             You currently do not have any database cluster.
                           </Typography>
-                          <Typography variant="body1" color="text.secondary">
+                          <Typography variant="body1" sx={{ color: '#666', fontSize: '0.875rem' }}>
                             Create one to get started.
                           </Typography>
                         </Stack>
