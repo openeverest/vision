@@ -62,10 +62,10 @@ export default function TypingAnimation() {
           color: '#ededed',
           fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
           fontWeight: 300,
-          display: 'inline-block',
+          display: 'inline',
         }}
       >
-        OpenEverest is {' '}
+        OpenEverest is{' '}
       </Typography>
       <Typography
         component="span"
@@ -77,7 +77,7 @@ export default function TypingAnimation() {
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
-          display: 'inline-block',
+          display: 'inline',
         }}
       >
         {displayText}
