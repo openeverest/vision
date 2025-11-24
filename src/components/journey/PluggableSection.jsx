@@ -6,7 +6,29 @@ export default function PluggableSection({ sectionRef }) {
     {
       number: 1,
       title: "The Lock-In Challenge",
-      description: "Right now OpenEverest is locking users in. Only three database offerings - MySQL, PostgreSQL and MongoDB. All three are using Percona Operators. To monitor the databases users must use Percona Monitoring and Management."
+      description: "Right now OpenEverest is locking users in. Only three database offerings - MySQL, PostgreSQL and MongoDB. All three are using Percona Operators. To monitor the databases users must use Percona Monitoring and Management.",
+      visual: (
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <img
+            src="/src/assets/everest-3dbs-min.png"
+            alt="Current Everest - Three Databases"
+            style={{
+              width: '100%',
+              maxWidth: '600px',
+              height: 'auto',
+              display: 'block',
+              borderRadius: '16px',
+            }}
+          />
+        </Box>
+      )
     },
     {
       number: 2,
