@@ -67,20 +67,22 @@ const databaseCategories = {
   'Relational (SQL)': [
     'MySQL', 'PostgreSQL', 'MariaDB', 'Vitess', 'CockroachDB', 
     'YugabyteDB', 'TiDB', 'Oracle Database', 'Microsoft SQL Server', 
-    'SQLite', 'SAP HANA', 'Amazon Aurora'
+    'SQLite', 'SAP HANA'
   ],
   'NoSQL Document': [
     'MongoDB', 'DocumentDB', 'Couchbase', 'ArangoDB', 'RethinkDB'
   ],
   'Key-Value & Caches': [
-    'Redis', 'Valkey', 'Memcached', 'Amazon DynamoDB', 'etcd'
+    'Redis', 'Valkey', 'Memcached', 'etcd'
   ],
   'Search & Analytics': [
-    'ElasticSearch', 'ClickHouse', 'Apache Solr', 'Splunk', 
-    'Amazon OpenSearch Service', 'Druid'
+    'ElasticSearch', 'ClickHouse', 'Apache Solr', 'Splunk', 'Druid'
+  ],
+  'Vector Databases': [
+    'Weaviate', 'Pinecone', 'Milvus', 'Chroma'
   ],
   'Graph Databases': [
-    'Neo4J', 'Weaviate', 'Amazon Neptune', 'DSE Graph', 'TigerGraph'
+    'Neo4J', 'DSE Graph', 'TigerGraph'
   ],
   'Wide-Column Stores': [
     'Cassandra/K8ssandra', 'Apache HBase', 'ScyllaDB'
