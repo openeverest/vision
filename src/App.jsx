@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { theme } from './theme/theme'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home'
-import DatabaseManagement from './pages/DatabaseManagement'
+import CurrentEverest from './pages/CurrentEverest'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/databases" element={<DatabaseManagement />} />
+            <Route path="/mockups/current-everest" element={<CurrentEverest />} />
           </Routes>
         </Layout>
       </Router>
