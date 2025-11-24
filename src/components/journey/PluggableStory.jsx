@@ -2,7 +2,7 @@
 import { Box, Container, Typography } from '@mui/material'
 import { useEffect, useState, useRef } from 'react'
 
-export default function PluggableStory({ number, title, description }) {
+export default function PluggableStory({ number, title, description, visual }) {
   const [isVisible, setIsVisible] = useState(false)
   const storyRef = useRef(null)
 
@@ -113,7 +113,7 @@ export default function PluggableStory({ number, title, description }) {
               </Typography>
             </Box>
 
-            {/* Visual Side - Placeholder for future visuals */}
+            {/* Visual Side */}
             <Box
               sx={{
                 flex: 1,
@@ -121,21 +121,33 @@ export default function PluggableStory({ number, title, description }) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: 'rgba(119, 144, 222, 0.05)',
-                border: '2px dashed rgba(119, 144, 222, 0.3)',
-                borderRadius: '16px',
                 position: 'relative',
               }}
             >
-              <Typography
-                sx={{
-                  color: 'rgba(119, 144, 222, 0.5)',
-                  fontSize: '1.25rem',
-                  fontWeight: 500,
-                }}
-              >
-                Visual Placeholder
-              </Typography>
+              {visual || (
+                <Box
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'rgba(119, 144, 222, 0.05)',
+                    border: '2px dashed rgba(119, 144, 222, 0.3)',
+                    borderRadius: '16px',
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: 'rgba(119, 144, 222, 0.5)',
+                      fontSize: '1.25rem',
+                      fontWeight: 500,
+                    }}
+                  >
+                    Visual Placeholder
+                  </Typography>
+                </Box>
+              )}
             </Box>
           </Box>
         </Box>

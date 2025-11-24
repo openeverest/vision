@@ -83,6 +83,7 @@ export default function PluggableSection({ sectionRef }) {
               number={story.number}
               title={story.title}
               description={story.description}
+              visual={story.visual}
             />
           ))}
         </Box>
