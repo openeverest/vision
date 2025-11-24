@@ -1,4 +1,5 @@
 
+<old_str>
 import { Box, Typography } from '@mui/material'
 import { useEffect, useState, useRef } from 'react'
 
@@ -110,3 +111,115 @@ export default function PluggableStory({ number, title, description, delay = 0 }
     </Box>
   )
 }
+</new_str>
+<new_str>
+import { Box, Typography } from '@mui/material'
+import { useEffect, useState, useRef } from 'react'
+
+export default function PluggableStory({ number, title, description }) {
+  const [isVisible, setIsVisible] = useState(false)
+  const storyRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.2 }
+    )
+
+    if (storyRef.current) {
+      observer.observe(storyRef.current)
+    }
+
+    return () => {
+      if (storyRef.current) {
+        observer.unobserve(storyRef.current)
+      }
+    }
+  }, [])
+
+  return (
+    <Box
+      ref={storyRef}
+      sx={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateX(0)' : 'translateX(150px)',
+        transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+        marginBottom: { xs: 6, md: 8 },
+      }}
+    >
+      <Box
+        sx={{
+          background: 'rgba(119, 144, 222, 0.05)',
+          border: '1px solid rgba(119, 144, 222, 0.2)',
+          borderRadius: '12px',
+          padding: { xs: 3, sm: 4 },
+          position: 'relative',
+          overflow: 'hidden',
+          '&:hover': {
+            background: 'rgba(119, 144, 222, 0.08)',
+            borderColor: 'rgba(119, 144, 222, 0.3)',
+            transform: 'translateY(-4px)',
+          },
+          transition: 'all 0.3s ease',
+        }}
+      >
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '4px',
+            height: '100%',
+            background: 'linear-gradient(180deg, #7790de 0%, #ed6a5a 100%)',
+          }}
+        />
+        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
+          <Box
+            sx={{
+              minWidth: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #7790de 0%, #ed6a5a 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontWeight: 600,
+              fontSize: '1.5rem',
+              color: '#ffffff',
+              flexShrink: 0,
+            }}
+          >
+            {number}
+          </Box>
+          <Box sx={{ flex: 1 }}>
+            <Typography
+              variant="h5"
+              sx={{
+                color: '#7790de',
+                fontWeight: 500,
+                marginBottom: 2,
+                fontSize: { xs: '1.25rem', sm: '1.5rem' },
+              }}
+            >
+              {title}
+            </Typography>
+            <Typography
+              sx={{
+                color: '#ededed',
+                fontSize: { xs: '1rem', sm: '1.125rem' },
+                lineHeight: 1.8,
+              }}
+            >
+              {description}
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  )
+}
+</new_str>
