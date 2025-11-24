@@ -2,52 +2,54 @@
 import { Box, Container, Typography } from '@mui/material'
 import { useEffect, useState, useRef } from 'react'
 
-export default function PluggableStory({ number, title, description }) {
-  const [isVisible, setIsVisible] = useState(false)
+export default function PluggableStory({ number, title, description, index }) {
+  const [scrollProgress, setScrollProgress] = useState(0)
   const storyRef = useRef(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.3 }
-    )
+    const handleScroll = () => {
+      if (!storyRef.current) return
 
-    if (storyRef.current) {
-      observer.observe(storyRef.current)
+      const rect = storyRef.current.getBoundingClientRect()
+      const windowHeight = window.innerHeight
+      
+      // Calculate how much of the story is visible
+      const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / windowHeight))
+      setScrollProgress(progress)
     }
 
-    return () => {
-      if (storyRef.current) {
-        observer.unobserve(storyRef.current)
-      }
-    }
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Calculate transform based on scroll progress
+  const translateX = (1 - scrollProgress) * 100
 
   return (
     <Box
       ref={storyRef}
       sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        background: 'linear-gradient(135deg, #161641 0%, #1e1e52 100%)',
-        padding: { xs: 4, sm: 6, md: 8 },
-        position: 'relative',
-        overflow: 'hidden',
+        position: 'sticky',
+        top: 0,
+        height: '100vh',
+        zIndex: 10 + index,
       }}
     >
-      <Container maxWidth="lg">
-        <Box
-          sx={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateX(0)' : 'translateX(150px)',
-            transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)',
-          }}
-        >
+      <Box
+        sx={{
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          background: 'linear-gradient(135deg, #161641 0%, #1e1e52 100%)',
+          position: 'relative',
+          overflow: 'hidden',
+          transform: `translateX(${translateX}%)`,
+          transition: 'transform 0.1s ease-out',
+        }}
+      >
+        <Container maxWidth="lg">
           <Box
             sx={{
               display: 'flex',
@@ -138,8 +140,8 @@ export default function PluggableStory({ number, title, description }) {
               </Typography>
             </Box>
           </Box>
-        </Box>
-      </Container>
+        </Container>
+      </Box>
     </Box>
   )
 }
