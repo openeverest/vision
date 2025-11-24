@@ -26,6 +26,12 @@ import {
   Switch,
   FormControlLabel,
   Chip,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  Card,
+  CardContent,
+  Grid,
 } from '@mui/material'
 import { everestTheme } from '../../theme/everestTheme'
 import {
@@ -44,6 +50,8 @@ import {
 } from '@mui/icons-material'
 
 const DRAWER_WIDTH = 72
+
+const mostPopular = ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'ElasticSearch', 'ClickHouse']
 
 const databaseCategories = {
   'Relational (SQL)': [
@@ -159,7 +167,7 @@ const sampleClusters = [
 export default function MultiDatabase() {
   const [helpAnchor, setHelpAnchor] = useState(null)
   const [userAnchor, setUserAnchor] = useState(null)
-  const [createDbAnchor, setCreateDbAnchor] = useState(null)
+  const [createDbOpen, setCreateDbOpen] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
 
   return (
@@ -277,8 +285,7 @@ export default function MultiDatabase() {
                 <Box sx={{ display: 'flex', gap: 1 }}>
                   <Button
                     variant="contained"
-                    endIcon={<ArrowDropDownIcon />}
-                    onClick={(e) => setCreateDbAnchor(e.currentTarget)}
+                    onClick={() => setCreateDbOpen(true)}
                     sx={{
                       bgcolor: '#0E5FB5',
                       '&:hover': { bgcolor: '#0d54a3' },
@@ -412,38 +419,119 @@ export default function MultiDatabase() {
           <MenuItem>Log out</MenuItem>
         </Menu>
 
-        {/* Create Database Menu - Organized by Category */}
-        <Menu 
-          anchorEl={createDbAnchor} 
-          open={Boolean(createDbAnchor)} 
-          onClose={() => setCreateDbAnchor(null)}
+        {/* Create Database Dialog */}
+        <Dialog 
+          open={createDbOpen} 
+          onClose={() => setCreateDbOpen(false)}
+          maxWidth="md"
+          fullWidth
           PaperProps={{
             sx: {
-              maxHeight: 500,
-              width: 320,
+              borderRadius: 2,
             }
           }}
         >
-          {Object.entries(databaseCategories).map(([category, databases], categoryIndex) => (
-            <Box key={categoryIndex}>
-              <MenuItem disabled sx={{ opacity: 1, bgcolor: '#f5f5f5' }}>
-                <Typography variant="caption" sx={{ fontWeight: 600, color: '#0E5FB5' }}>
+          <DialogTitle sx={{ borderBottom: '1px solid #e0e0e0', pb: 2 }}>
+            <Typography variant="h5" sx={{ fontWeight: 500, color: '#2C323E' }}>
+              Create Database
+            </Typography>
+          </DialogTitle>
+          <DialogContent sx={{ pt: 3 }}>
+            {/* Most Popular */}
+            <Box sx={{ mb: 4 }}>
+              <Typography variant="h6" sx={{ mb: 2, color: '#0E5FB5', fontWeight: 500 }}>
+                Most Popular
+              </Typography>
+              <Grid container spacing={2}>
+                {mostPopular.map((db, index) => (
+                  <Grid item xs={12} sm={6} md={4} key={index}>
+                    <Card 
+                      sx={{ 
+                        cursor: 'pointer',
+                        transition: 'all 0.2s',
+                        border: '1px solid #e0e0e0',
+                        '&:hover': {
+                          transform: 'translateY(-4px)',
+                          boxShadow: '0 4px 12px rgba(14, 95, 181, 0.15)',
+                          borderColor: '#0E5FB5',
+                        }
+                      }}
+                      onClick={() => setCreateDbOpen(false)}
+                    >
+                      <CardContent sx={{ textAlign: 'center', py: 3 }}>
+                        <Box
+                          sx={{
+                            width: 60,
+                            height: 60,
+                            margin: '0 auto 12px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            bgcolor: '#f5f5f5',
+                            borderRadius: 2,
+                          }}
+                        >
+                          <StorageIcon sx={{ fontSize: 32, color: '#0E5FB5' }} />
+                        </Box>
+                        <Typography variant="body1" sx={{ fontWeight: 500, color: '#2C323E' }}>
+                          {db}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+
+            {/* Categories */}
+            {Object.entries(databaseCategories).map(([category, databases], categoryIndex) => (
+              <Box key={categoryIndex} sx={{ mb: 4 }}>
+                <Typography variant="h6" sx={{ mb: 2, color: '#0E5FB5', fontWeight: 500 }}>
                   {category}
                 </Typography>
-              </MenuItem>
-              {databases.map((db, dbIndex) => (
-                <MenuItem 
-                  key={dbIndex} 
-                  onClick={() => setCreateDbAnchor(null)}
-                  sx={{ pl: 3 }}
-                >
-                  {db}
-                </MenuItem>
-              ))}
-              {categoryIndex < Object.entries(databaseCategories).length - 1 && <Divider />}
-            </Box>
-          ))}
-        </Menu>
+                <Grid container spacing={2}>
+                  {databases.map((db, dbIndex) => (
+                    <Grid item xs={12} sm={6} md={4} key={dbIndex}>
+                      <Card 
+                        sx={{ 
+                          cursor: 'pointer',
+                          transition: 'all 0.2s',
+                          border: '1px solid #e0e0e0',
+                          '&:hover': {
+                            transform: 'translateY(-4px)',
+                            boxShadow: '0 4px 12px rgba(14, 95, 181, 0.15)',
+                            borderColor: '#0E5FB5',
+                          }
+                        }}
+                        onClick={() => setCreateDbOpen(false)}
+                      >
+                        <CardContent sx={{ textAlign: 'center', py: 3 }}>
+                          <Box
+                            sx={{
+                              width: 60,
+                              height: 60,
+                              margin: '0 auto 12px',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              bgcolor: '#f5f5f5',
+                              borderRadius: 2,
+                            }}
+                          >
+                            <StorageIcon sx={{ fontSize: 32, color: '#0E5FB5' }} />
+                          </Box>
+                          <Typography variant="body1" sx={{ fontWeight: 500, color: '#2C323E' }}>
+                            {db}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+            ))}
+          </DialogContent>
+        </Dialog>
       </Box>
     </ThemeProvider>
   )
