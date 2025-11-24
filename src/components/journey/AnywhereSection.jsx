@@ -95,19 +95,14 @@ export default function AnywhereSection({ sectionRef }) {
       ref={sectionRef}
       id="anywhere"
       sx={{
-        position: 'relative',
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #161641 0%, #1e1e52 100%)',
+        padding: { xs: 4, sm: 6, md: 8 },
+        paddingTop: { xs: 8, sm: 10, md: 12 },
       }}
     >
-      <Box
-        sx={{
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          background: 'linear-gradient(135deg, #161641 0%, #1e1e52 100%)',
-          padding: { xs: 4, sm: 6, md: 8 },
-        }}
-      >
-        <Container maxWidth="lg">
+      <Container maxWidth="lg">
+        <Box sx={{ marginBottom: { xs: 4, md: 6 } }}>
           <Typography
             variant="h3"
             sx={{
@@ -132,21 +127,20 @@ export default function AnywhereSection({ sectionRef }) {
           >
             Deploy your databases wherever you need them - from edge devices to massive cloud clusters. One platform, infinite possibilities.
           </Typography>
-        </Container>
-      </Box>
-
-      {stories.map((story, index) => (
-        <Box key={story.number}>
-          <AnywhereStory
-            number={story.number}
-            title={story.title}
-            description={story.description}
-            visual={story.visual}
-            index={index}
-          />
-          <Box sx={{ height: '100vh' }} />
         </Box>
-      ))}
+
+        <Box sx={{ marginTop: { xs: 6, md: 8 } }}>
+          {stories.map((story) => (
+            <AnywhereStory
+              key={story.number}
+              number={story.number}
+              title={story.title}
+              description={story.description}
+              visual={story.visual}
+            />
+          ))}
+        </Box>
+      </Container>
     </Box>
   )
 }

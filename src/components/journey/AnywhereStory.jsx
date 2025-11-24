@@ -2,52 +2,52 @@
 import { Box, Container, Typography } from '@mui/material'
 import { useEffect, useState, useRef } from 'react'
 
-export default function AnywhereStory({ number, title, description, visual, index }) {
-  const [scrollProgress, setScrollProgress] = useState(0)
+export default function AnywhereStory({ number, title, description, visual }) {
+  const [isVisible, setIsVisible] = useState(false)
   const storyRef = useRef(null)
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!storyRef.current) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.3 }
+    )
 
-      const rect = storyRef.current.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-      
-      const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / windowHeight))
-      setScrollProgress(progress)
+    if (storyRef.current) {
+      observer.observe(storyRef.current)
     }
 
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
-
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      if (storyRef.current) {
+        observer.unobserve(storyRef.current)
+      }
+    }
   }, [])
-
-  const translateX = (1 - scrollProgress) * 100
 
   return (
     <Box
       ref={storyRef}
       sx={{
-        position: 'sticky',
-        top: 0,
-        height: '100vh',
-        zIndex: 10 + index,
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        background: 'linear-gradient(135deg, #161641 0%, #1e1e52 100%)',
+        padding: { xs: 4, sm: 6, md: 8 },
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <Box
-        sx={{
-          height: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          background: 'linear-gradient(135deg, #161641 0%, #1e1e52 100%)',
-          position: 'relative',
-          overflow: 'hidden',
-          transform: `translateX(${translateX}%)`,
-          transition: 'transform 0.1s ease-out',
-        }}
-      >
-        <Container maxWidth="lg">
+      <Container maxWidth="lg">
+        <Box
+          sx={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateX(0)' : 'translateX(150px)',
+            transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)',
+          }}
+        >
           <Box
             sx={{
               display: 'flex',
@@ -125,8 +125,8 @@ export default function AnywhereStory({ number, title, description, visual, inde
               {visual}
             </Box>
           </Box>
-        </Container>
-      </Box>
+        </Box>
+      </Container>
     </Box>
   )
 }
