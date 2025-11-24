@@ -1,4 +1,3 @@
-
 import { Box, Typography } from '@mui/material'
 import { useState, useEffect } from 'react'
 
@@ -6,6 +5,7 @@ export default function JourneyProgress({ activeSection }) {
   const sections = [
     { id: 'hero', label: 'Vision', color: '#ffffff' },
     { id: 'pluggable', label: 'Pluggable', color: '#7790de' },
+    { id: 'opensource', label: 'Open Source', color: '#60a5fa' },
     { id: 'anywhere', label: 'Truly Anywhere', color: '#ed6a5a' },
     { id: 'copilot', label: 'AI Copilot', color: '#7790de' },
   ]
