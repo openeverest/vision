@@ -67,18 +67,15 @@ export default function PluggableSection({ sectionRef }) {
         </Container>
       </Box>
 
-      {/* Stories with spacers for scroll */}
+      {/* Stories */}
       {stories.map((story, index) => (
-        <Box key={story.number}>
-          <PluggableStory
-            number={story.number}
-            title={story.title}
-            description={story.description}
-            index={index}
-          />
-          {/* Spacer to create scroll distance */}
-          <Box sx={{ height: '100vh' }} />
-        </Box>
+        <PluggableStory
+          key={story.number}
+          number={story.number}
+          title={story.title}
+          description={story.description}
+          index={index}
+        />
       ))}
     </Box>
   )
