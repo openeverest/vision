@@ -102,7 +102,7 @@ function App() {
                 lineHeight: 1.8,
               }}
             >
-              Reaching the summit of innovation and possibility
+              Open Source Database Platform - run databases anywhere. 
             </Typography>
           </Box>
         </Container>
