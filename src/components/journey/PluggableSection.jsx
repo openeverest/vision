@@ -1,4 +1,3 @@
-
 import { Box, Container, Typography } from '@mui/material'
 import PluggableStory from './PluggableStory'
 
@@ -26,20 +25,14 @@ export default function PluggableSection({ sectionRef }) {
       ref={sectionRef}
       id="pluggable"
       sx={{
-        position: 'relative',
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #161641 0%, #1e1e52 100%)',
+        padding: { xs: 4, sm: 6, md: 8 },
+        paddingTop: { xs: 8, sm: 10, md: 12 },
       }}
     >
-      {/* Section Header */}
-      <Box
-        sx={{
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          background: 'linear-gradient(135deg, #161641 0%, #1e1e52 100%)',
-          padding: { xs: 4, sm: 6, md: 8 },
-        }}
-      >
-        <Container maxWidth="lg">
+      <Container maxWidth="lg">
+        <Box sx={{ marginBottom: { xs: 4, md: 6 } }}>
           <Typography
             variant="h3"
             sx={{
@@ -64,19 +57,19 @@ export default function PluggableSection({ sectionRef }) {
           >
             OpenEverest is designed with modularity at its core. Mix and match database engines, storage backends, and deployment strategies to create the perfect solution for your needs.
           </Typography>
-        </Container>
-      </Box>
+        </Box>
 
-      {/* Stories */}
-      {stories.map((story, index) => (
-        <PluggableStory
-          key={story.number}
-          number={story.number}
-          title={story.title}
-          description={story.description}
-          index={index}
-        />
-      ))}
+        <Box sx={{ marginTop: { xs: 6, md: 8 } }}>
+          {stories.map((story) => (
+            <PluggableStory
+              key={story.number}
+              number={story.number}
+              title={story.title}
+              description={story.description}
+            />
+          ))}
+        </Box>
+      </Container>
     </Box>
   )
 }
