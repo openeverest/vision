@@ -26,7 +26,7 @@ import {
   Switch,
   FormControlLabel,
 } from '@mui/material'
-import { databaseTheme } from '../theme/databaseTheme'
+import { everestTheme } from '../../theme/everestTheme'
 import {
   Help as HelpIcon,
   PersonOutline as PersonOutlineIcon,
@@ -43,14 +43,14 @@ import {
 
 const DRAWER_WIDTH = 72
 
-export default function DatabaseManagement() {
+export default function CurrentEverest() {
   const [helpAnchor, setHelpAnchor] = useState(null)
   const [userAnchor, setUserAnchor] = useState(null)
   const [createDbAnchor, setCreateDbAnchor] = useState(null)
   const [darkMode, setDarkMode] = useState(false)
 
   return (
-    <ThemeProvider theme={databaseTheme}>
+    <ThemeProvider theme={everestTheme}>
       <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: '#fafafa', fontFamily: 'Roboto, sans-serif' }}>
       {/* App Bar */}
       <AppBar
