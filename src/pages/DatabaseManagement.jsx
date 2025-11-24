@@ -1,5 +1,6 @@
 
 import { useState } from 'react'
+import { ThemeProvider } from '@mui/material'
 import {
   Box,
   Container,
@@ -25,6 +26,7 @@ import {
   Switch,
   FormControlLabel,
 } from '@mui/material'
+import { databaseTheme } from '../theme/databaseTheme'
 import {
   Help as HelpIcon,
   PersonOutline as PersonOutlineIcon,
@@ -48,7 +50,8 @@ export default function DatabaseManagement() {
   const [darkMode, setDarkMode] = useState(false)
 
   return (
-    <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: '#fafafa', fontFamily: 'Roboto, sans-serif' }}>
+    <ThemeProvider theme={databaseTheme}>
+      <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: '#fafafa', fontFamily: 'Roboto, sans-serif' }}>
       {/* App Bar */}
       <AppBar
         position="fixed"
@@ -271,5 +274,6 @@ export default function DatabaseManagement() {
         <MenuItem onClick={() => setCreateDbAnchor(null)}>PostgreSQL</MenuItem>
       </Menu>
     </Box>
+    </ThemeProvider>
   )
 }
