@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material'
 import { useState, useEffect } from 'react'
 
 export default function TypingAnimation() {
-  const phrases = ['pluggable', 'truly anywhere', 'a copilot']
+  const phrases = ['pluggable', 'truly anywhere', 'an AI copilot']
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
   const [displayText, setDisplayText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
@@ -48,9 +48,9 @@ export default function TypingAnimation() {
   return (
     <Box
       sx={{
-        maxWidth: '600px',
+        maxWidth: '900px',
         margin: '0 auto',
-        fontSize: '1.1rem',
+        fontSize: '3rem',
         fontWeight: 300,
         lineHeight: 1.8,
         minHeight: '60px',
@@ -60,7 +60,7 @@ export default function TypingAnimation() {
         component="span"
         sx={{
           color: '#ededed',
-          fontSize: '1.1rem',
+          fontSize: '3rem',
           fontWeight: 300,
         }}
       >
@@ -70,7 +70,7 @@ export default function TypingAnimation() {
         component="span"
         sx={{
           color: '#7790de',
-          fontSize: '1.1rem',
+          fontSize: '3rem',
           fontWeight: 400,
           background: 'linear-gradient(135deg, #7790de 0%, #ed6a5a 100%)',
           backgroundClip: 'text',
