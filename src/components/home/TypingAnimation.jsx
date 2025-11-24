@@ -50,18 +50,19 @@ export default function TypingAnimation() {
       sx={{
         maxWidth: '900px',
         margin: '0 auto',
-        fontSize: '3rem',
         fontWeight: 300,
         lineHeight: 1.8,
-        minHeight: '60px',
+        minHeight: { xs: '120px', sm: '80px', md: '60px' },
+        padding: { xs: '0 1rem', sm: '0 2rem', md: 0 },
       }}
     >
       <Typography
         component="span"
         sx={{
           color: '#ededed',
-          fontSize: '3rem',
+          fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
           fontWeight: 300,
+          display: 'inline-block',
         }}
       >
         OpenEverest is{' '}
@@ -70,12 +71,13 @@ export default function TypingAnimation() {
         component="span"
         sx={{
           color: '#7790de',
-          fontSize: '3rem',
+          fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
           fontWeight: 400,
           background: 'linear-gradient(135deg, #7790de 0%, #ed6a5a 100%)',
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
+          display: 'inline-block',
         }}
       >
         {displayText}
