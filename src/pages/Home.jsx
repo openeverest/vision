@@ -6,6 +6,7 @@ import JourneyProgress from '../components/journey/JourneyProgress'
 import PluggableSection from '../components/journey/PluggableSection'
 import AnywhereSection from '../components/journey/AnywhereSection'
 import CopilotSection from '../components/journey/CopilotSection'
+import Footer from '../components/layout/Footer'
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('hero')
@@ -52,6 +53,7 @@ export default function Home() {
       <PluggableSection sectionRef={pluggableRef} />
       <AnywhereSection sectionRef={anywhereRef} />
       <CopilotSection sectionRef={copilotRef} />
+      <Footer />
     </Box>
   )
 }
