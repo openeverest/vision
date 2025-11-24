@@ -57,20 +57,23 @@ function App() {
       >
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center' }}>
-            <Typography
-              variant="h1"
+            <Box
               sx={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #7790de 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
                 marginBottom: 3,
-                fontWeight: 300,
-                letterSpacing: '0.08em',
+                display: 'flex',
+                justifyContent: 'center',
               }}
             >
-              OpenEverest
-            </Typography>
+              <img
+                src="/src/assets/logo.png"
+                alt="OpenEverest"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  maxHeight: '150px',
+                }}
+              />
+            </Box>
             <Typography
               variant="h2"
               sx={{
