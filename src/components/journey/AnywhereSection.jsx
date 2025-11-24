@@ -68,7 +68,7 @@ export default function AnywhereSection({ sectionRef }) {
             Unified Control Plane
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
-            {['AWS Aurora', 'GCP CloudSQL', 'Neon', 'Azure Database'].map((service) => (
+            {['AWS Aurora', 'GCP CloudSQL', 'Neon', 'Azure Database', 'K8S Operators', 'Self-managed clusters'].map((service) => (
               <Box
                 key={service}
                 sx={{
