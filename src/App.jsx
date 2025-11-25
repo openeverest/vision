@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import CurrentEverest from './pages/mockups/CurrentEverest'
 import MultiDatabase from './pages/mockups/MultiDatabase'
 import DeployDatabase from './pages/mockups/DeployDatabase'
+import AICopilot from './pages/mockups/AICopilot' // Assuming AICopilot component exists
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/mockups/current-everest" element={<CurrentEverest />} />
             <Route path="/mockups/multi-database" element={<MultiDatabase />} />
             <Route path="/mockups/deploy-database" element={<DeployDatabase />} />
+            <Route path="/mockups/ai-copilot" element={<AICopilot />} />
           </Routes>
         </Layout>
       </Router>
