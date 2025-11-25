@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { ThemeProvider } from '@mui/material'
 import {
@@ -48,6 +47,8 @@ import {
   HelpOutlineOutlined as HelpOutlineOutlinedIcon,
   CheckCircle as CheckCircleIcon,
 } from '@mui/icons-material'
+// Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom'
 
 const DRAWER_WIDTH = 72
 
@@ -181,6 +182,15 @@ export default function MultiDatabase() {
   const [userAnchor, setUserAnchor] = useState(null)
   const [createDbOpen, setCreateDbOpen] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
+  // Initialize navigate hook
+  const navigate = useNavigate()
+
+  // Function to handle database click and navigate
+  const handleDatabaseClick = (dbName) => {
+    if (dbName === 'PostgreSQL') {
+      navigate('/create-db-deployment-options')
+    }
+  }
 
   return (
     <ThemeProvider theme={everestTheme}>
@@ -480,7 +490,7 @@ export default function MultiDatabase() {
                           borderColor: '#0E5FB5',
                         }
                       }}
-                      onClick={() => setCreateDbOpen(false)}
+                      onClick={() => handleDatabaseClick(db)}
                     >
                       <CardContent sx={{ textAlign: 'center', py: 3 }}>
                         <Box
@@ -539,7 +549,7 @@ export default function MultiDatabase() {
                             borderColor: '#0E5FB5',
                           }
                         }}
-                        onClick={() => setCreateDbOpen(false)}
+                        onClick={() => handleDatabaseClick(db)}
                       >
                         <CardContent sx={{ textAlign: 'center', py: 3 }}>
                           <Box
