@@ -188,7 +188,7 @@ export default function MultiDatabase() {
   // Function to handle database click and navigate
   const handleDatabaseClick = (dbName) => {
     if (dbName === 'PostgreSQL') {
-      navigate('/create-db-deployment-options')
+      navigate('/mockups/deploy-database')
     }
   }
 
