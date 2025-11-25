@@ -127,7 +127,14 @@ export default function PluggableSection({ sectionRef }) {
               width: '95vw',
               height: '95vh',
               maxWidth: 'none',
-              margin: 2,
+              margin: 0,
+              position: 'relative',
+            }
+          }}
+          sx={{
+            '& .MuiDialog-container': {
+              alignItems: 'center',
+              justifyContent: 'center',
             }
           }}
         >
@@ -135,18 +142,19 @@ export default function PluggableSection({ sectionRef }) {
             onClick={() => setDialogOpen(false)}
             sx={{
               position: 'absolute',
-              right: 8,
-              top: 8,
-              zIndex: 1,
-              bgcolor: 'rgba(255, 255, 255, 0.9)',
+              right: 16,
+              top: 16,
+              zIndex: 10000,
+              bgcolor: '#fff',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
               '&:hover': {
-                bgcolor: 'rgba(255, 255, 255, 1)',
+                bgcolor: '#f5f5f5',
               }
             }}
           >
             <CloseIcon />
           </IconButton>
-          <Box sx={{ height: '100%', overflow: 'auto' }}>
+          <Box sx={{ height: '100%', overflow: 'auto', pt: 1 }}>
             <MultiDatabase />
           </Box>
         </Dialog>
