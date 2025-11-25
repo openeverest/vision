@@ -17,7 +17,84 @@ export default function OpenSourceSection({ sectionRef }) {
     {
       number: 3,
       title: "Ecosystem Integration",
-      description: "Open source thrives on collaboration. We're building OpenEverest to work seamlessly with the tools developers already love and trust. Whether it's Terraform for infrastructure as code, Helm for package management, or GitOps workflows for continuous deployment, we're creating bridges to your existing DevOps toolkit. The community can contribute integrations with their favorite tools, ensuring OpenEverest fits naturally into diverse workflows rather than forcing a single approach."
+      description: "Open source thrives on collaboration. We're building OpenEverest to work seamlessly with the tools developers already love and trust. Whether it's Terraform for infrastructure as code, Helm for package management, or GitOps workflows for continuous deployment, we're creating bridges to your existing DevOps toolkit. The community can contribute integrations with their favorite tools, ensuring OpenEverest fits naturally into diverse workflows rather than forcing a single approach.",
+      visual: (
+        <Box
+          sx={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 3,
+          }}
+        >
+          <Typography
+            sx={{
+              color: '#ededed',
+              fontSize: '1.25rem',
+              fontWeight: 500,
+              textAlign: 'center',
+              marginBottom: 2,
+            }}
+          >
+            Seamless DevOps Integration
+          </Typography>
+          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center', maxWidth: '600px' }}>
+            {[
+              { name: 'Terraform', desc: 'Infrastructure as Code' },
+              { name: 'Helm', desc: 'Package management' },
+              { name: 'ArgoCD', desc: 'GitOps deployment' },
+              { name: 'Prometheus', desc: 'Monitoring & alerting' },
+              { name: 'Grafana', desc: 'Observability platform' },
+              { name: 'Vault', desc: 'Secrets management' }
+            ].map((tool) => (
+              <Box
+                key={tool.name}
+                sx={{
+                  padding: '16px 20px',
+                  background: 'rgba(119, 144, 222, 0.1)',
+                  border: '1px solid rgba(119, 144, 222, 0.3)',
+                  borderRadius: '12px',
+                  minWidth: '160px',
+                  flex: '1 1 calc(33.333% - 16px)',
+                  maxWidth: '180px',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    background: 'rgba(119, 144, 222, 0.15)',
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 4px 12px rgba(119, 144, 222, 0.2)',
+                  }
+                }}
+              >
+                <Typography
+                  sx={{
+                    color: '#7790de',
+                    fontSize: '0.95rem',
+                    fontWeight: 600,
+                    marginBottom: 0.5,
+                    textAlign: 'center',
+                  }}
+                >
+                  {tool.name}
+                </Typography>
+                <Typography
+                  sx={{
+                    color: '#ededed',
+                    fontSize: '0.75rem',
+                    opacity: 0.8,
+                    textAlign: 'center',
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {tool.desc}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      )
     }
   ]
 
@@ -67,6 +144,7 @@ export default function OpenSourceSection({ sectionRef }) {
               number={story.number}
               title={story.title}
               description={story.description}
+              visual={story.visual}
             />
           ))}
         </Box>
