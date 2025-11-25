@@ -1,8 +1,8 @@
 
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, Typography, Button } from '@mui/material'
 import { useEffect, useState, useRef } from 'react'
 
-export default function PluggableStory({ number, title, description, visual }) {
+export default function PluggableStory({ number, title, description, visual, showButton, onButtonClick }) {
   const [isVisible, setIsVisible] = useState(false)
   const storyRef = useRef(null)
 
@@ -111,6 +111,31 @@ export default function PluggableStory({ number, title, description, visual }) {
               >
                 {description}
               </Typography>
+
+              {showButton && (
+                <Button
+                  variant="contained"
+                  onClick={onButtonClick}
+                  sx={{
+                    mt: 4,
+                    background: 'linear-gradient(135deg, #7790de 0%, #ed6a5a 100%)',
+                    color: '#fff',
+                    fontSize: '1.125rem',
+                    padding: '12px 32px',
+                    borderRadius: '8px',
+                    textTransform: 'none',
+                    fontWeight: 500,
+                    '&:hover': {
+                      background: 'linear-gradient(135deg, #6880ce 0%, #dc594a 100%)',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 8px 16px rgba(119, 144, 222, 0.3)',
+                    },
+                    transition: 'all 0.3s ease',
+                  }}
+                >
+                  See here
+                </Button>
+              )}
             </Box>
 
             {/* Visual Side */}

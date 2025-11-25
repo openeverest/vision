@@ -1,7 +1,11 @@
-import { Box, Container, Typography } from '@mui/material'
+import { useState } from 'react'
+import { Box, Container, Typography, Dialog, IconButton } from '@mui/material'
+import { Close as CloseIcon } from '@mui/icons-material'
 import PluggableStory from './PluggableStory'
+import MultiDatabase from '../../pages/mockups/MultiDatabase'
 
 export default function PluggableSection({ sectionRef }) {
+  const [dialogOpen, setDialogOpen] = useState(false)
   const stories = [
     {
       number: 1,
@@ -33,7 +37,30 @@ export default function PluggableSection({ sectionRef }) {
     {
       number: 2,
       title: "The Pluggable Vision",
-      description: "It seems a good idea to add more databases or integrations, but it is quite complex process right now. We will turn OpenEverest into a pluggable core, where database, storage and other technologies are a plugin. We will see ClickHouse, Vitess, DocumentDB, Valkey, integration with Prometheus and other technologies coming soon."
+      description: "It seems a good idea to add more databases or integrations, but it is quite complex process right now. We will turn OpenEverest into a pluggable core, where database, storage and other technologies are a plugin. We will see ClickHouse, Vitess, DocumentDB, Valkey, integration with Prometheus and other technologies coming soon.",
+      visual: (
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <img
+            src="/src/assets/multi-db-visual-min.png"
+            alt="Multi-Database Vision"
+            style={{
+              width: '100%',
+              maxWidth: '600px',
+              height: 'auto',
+              display: 'block',
+              borderRadius: '16px',
+            }}
+          />
+        </Box>
+      ),
+      showButton: true
     }
   ]
 
@@ -84,9 +111,45 @@ export default function PluggableSection({ sectionRef }) {
               title={story.title}
               description={story.description}
               visual={story.visual}
+              showButton={story.showButton}
+              onButtonClick={() => setDialogOpen(true)}
             />
           ))}
         </Box>
+
+        <Dialog
+          open={dialogOpen}
+          onClose={() => setDialogOpen(false)}
+          maxWidth={false}
+          fullWidth
+          PaperProps={{
+            sx: {
+              width: '95vw',
+              height: '95vh',
+              maxWidth: 'none',
+              margin: 2,
+            }
+          }}
+        >
+          <IconButton
+            onClick={() => setDialogOpen(false)}
+            sx={{
+              position: 'absolute',
+              right: 8,
+              top: 8,
+              zIndex: 1,
+              bgcolor: 'rgba(255, 255, 255, 0.9)',
+              '&:hover': {
+                bgcolor: 'rgba(255, 255, 255, 1)',
+              }
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+          <Box sx={{ height: '100%', overflow: 'auto' }}>
+            <MultiDatabase />
+          </Box>
+        </Dialog>
       </Container>
     </Box>
   )
