@@ -11,35 +11,8 @@ export default function PluggableSection({ sectionRef }) {
   const stories = [
     {
       number: 1,
-      title: "The Lock-In Challenge",
-      description: "Right now OpenEverest is locking users in. Only three database offerings - MySQL, PostgreSQL and MongoDB. All three are using Percona Operators. To monitor the databases users must use Percona Monitoring and Management.",
-      visual: (
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <img
-            src={everest3dbs}
-            alt="Current Everest - Three Databases"
-            style={{
-              width: '100%',
-              maxWidth: '600px',
-              height: 'auto',
-              display: 'block',
-              borderRadius: '16px',
-            }}
-          />
-        </Box>
-      )
-    },
-    {
-      number: 2,
       title: "The Pluggable Vision",
-      description: "It seems a good idea to add more databases or integrations, but it is quite complex process right now. We will turn OpenEverest into a pluggable core, where database, storage and other technologies are a plugin. We will see ClickHouse, Vitess, DocumentDB, Valkey, integration with Prometheus and other technologies coming soon.",
+      description: "We're turning OpenEverest into a pluggable core, where databases, storage, and other technologies are plugins. We will see ClickHouse, Vitess, DocumentDB, Valkey, integration with Prometheus and other technologies coming soon.",
       visual: (
         <Box
           sx={{
@@ -63,6 +36,79 @@ export default function PluggableSection({ sectionRef }) {
         </Box>
       ),
       showButton: true
+    },
+    {
+      number: 2,
+      title: "Everything is a Plugin",
+      description: "Want to integrate with your favorite monitoring tool? It's a plugin. Need to sync data between database clusters of different vendors? Plugin. Custom backup solutions? Plugin. The plugin architecture means you're never locked into a single vendor's ecosystem - mix and match the tools that work best for your needs.",
+      visual: (
+        <Box
+          sx={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 3,
+            padding: 4,
+          }}
+        >
+          <Typography
+            sx={{
+              color: '#ededed',
+              fontSize: '1.25rem',
+              fontWeight: 500,
+              textAlign: 'center',
+              marginBottom: 2,
+            }}
+          >
+            Plugin Ecosystem
+          </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3, justifyContent: 'center', maxWidth: '600px' }}>
+            {[
+              { label: 'Monitoring', icon: '📊' },
+              { label: 'Data Sync', icon: '🔄' },
+              { label: 'Backups', icon: '💾' },
+              { label: 'Security', icon: '🔒' },
+              { label: 'Analytics', icon: '📈' },
+              { label: 'Automation', icon: '⚙️' },
+            ].map((item) => (
+              <Box
+                key={item.label}
+                sx={{
+                  background: 'rgba(119, 144, 222, 0.1)',
+                  border: '2px solid rgba(119, 144, 222, 0.3)',
+                  borderRadius: '12px',
+                  padding: '16px 24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 1,
+                  minWidth: '120px',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    background: 'rgba(119, 144, 222, 0.2)',
+                    borderColor: 'rgba(119, 144, 222, 0.5)',
+                    transform: 'translateY(-4px)',
+                  }
+                }}
+              >
+                <Box sx={{ fontSize: '2rem' }}>{item.icon}</Box>
+                <Typography
+                  sx={{
+                    color: '#ededed',
+                    fontSize: '0.9rem',
+                    fontWeight: 500,
+                  }}
+                >
+                  {item.label}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      )
     }
   ]
 
