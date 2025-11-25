@@ -1,3 +1,4 @@
+
 import { Box, Container, Typography } from '@mui/material'
 import AnywhereStory from './AnywhereStory'
 
@@ -8,8 +9,8 @@ export default function AnywhereSection({ sectionRef }) {
       title: "Run Data Anywhere on Kubernetes",
       description: (
         <>
-          OpenEverest leverages Kubernetes to run databases anywhere - in the cloud, on-premises, or hybrid environments.
-          According to the <a href="https://dok.community/blog/beyond-adoption-the-age-of-operational-excellence/" target="_blank" rel="noopener noreferrer" style={{ color: '#7790de', textDecoration: 'underline' }}>Data on Kubernetes survey</a>,
+          OpenEverest leverages Kubernetes to run databases anywhere - in the cloud, on-premises, or hybrid environments. 
+          According to the <a href="https://dok.community/blog/beyond-adoption-the-age-of-operational-excellence/" target="_blank" rel="noopener noreferrer" style={{ color: '#7790de', textDecoration: 'underline' }}>Data on Kubernetes survey</a>, 
           50% of organizations already run data workloads on Kubernetes in production.
         </>
       ),
@@ -81,88 +82,6 @@ export default function AnywhereSection({ sectionRef }) {
                 }}
               >
                 {service}
-              </Box>
-            ))}
-          </Box>
-        </Box>
-      )
-    },
-    {
-      number: 3,
-      title: "Integrations",
-      description: "We won't stop at Kubernetes. OpenEverest will enable you to manage AWS Aurora, GCP CloudSQL, Neon, and other managed services through the same unified UI and API. Leverage the best tools and standards in the industry through seamless integrations.",
-      visual: (
-        <Box
-          sx={{
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: 3,
-          }}
-        >
-          <Typography
-            sx={{
-              color: '#ededed',
-              fontSize: '1.25rem',
-              fontWeight: 500,
-              textAlign: 'center',
-              marginBottom: 2,
-            }}
-          >
-            Unified Control Plane
-          </Typography>
-          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center', maxWidth: '600px' }}>
-            {[
-              { name: 'AWS Aurora', desc: 'PostgreSQL & MySQL compatible' },
-              { name: 'GCP CloudSQL', desc: 'Managed relational databases' },
-              { name: 'Neon', desc: 'Serverless PostgreSQL' },
-              { name: 'Azure Database', desc: 'Cloud-native data services' },
-              { name: 'K8S Operators', desc: 'Cloud-native orchestration' },
-              { name: 'Self-managed', desc: 'Full control on your infra' }
-            ].map((service) => (
-              <Box
-                key={service.name}
-                sx={{
-                  padding: '16px 20px',
-                  background: 'rgba(237, 106, 90, 0.1)',
-                  border: '1px solid rgba(237, 106, 90, 0.3)',
-                  borderRadius: '12px',
-                  minWidth: '160px',
-                  flex: '1 1 calc(33.333% - 16px)',
-                  maxWidth: '180px',
-                  transition: 'all 0.3s ease',
-                  '&:hover': {
-                    background: 'rgba(237, 106, 90, 0.15)',
-                    transform: 'translateY(-4px)',
-                    boxShadow: '0 4px 12px rgba(237, 106, 90, 0.2)',
-                  }
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: '#ed6a5a',
-                    fontSize: '0.95rem',
-                    fontWeight: 600,
-                    marginBottom: 0.5,
-                    textAlign: 'center',
-                  }}
-                >
-                  {service.name}
-                </Typography>
-                <Typography
-                  sx={{
-                    color: '#ededed',
-                    fontSize: '0.75rem',
-                    opacity: 0.8,
-                    textAlign: 'center',
-                    lineHeight: 1.3,
-                  }}
-                >
-                  {service.desc}
-                </Typography>
               </Box>
             ))}
           </Box>
