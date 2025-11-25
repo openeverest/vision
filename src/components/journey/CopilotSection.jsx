@@ -1,7 +1,11 @@
-import { Box, Container, Typography } from '@mui/material'
+import { useState } from 'react'
+import { Box, Container, Typography, Dialog, IconButton } from '@mui/material'
+import { Close as CloseIcon } from '@mui/icons-material'
 import CopilotStory from './CopilotStory'
+import AICopilot from '../../pages/mockups/AICopilot'
 
 export default function CopilotSection({ sectionRef }) {
+  const [dialogOpen, setDialogOpen] = useState(false)
   const stories = [
     {
       number: 1,
@@ -226,11 +230,44 @@ export default function CopilotSection({ sectionRef }) {
               title={story.title}
               description={story.description}
               visual={story.visual}
-              showButton={story.showButton} 
+              showButton={story.showButton}
+              onButtonClick={() => setDialogOpen(true)}
             />
           ))}
         </Box>
       </Container>
+
+      <Dialog
+        open={dialogOpen}
+        onClose={() => setDialogOpen(false)}
+        maxWidth={false}
+        fullWidth
+        PaperProps={{
+          sx: {
+            width: '95vw',
+            height: '95vh',
+            maxWidth: 'none',
+            maxHeight: 'none',
+            m: 0,
+            position: 'relative',
+          }
+        }}
+      >
+        <IconButton
+          onClick={() => setDialogOpen(false)}
+          sx={{
+            position: 'absolute',
+            right: 16,
+            top: 16,
+            zIndex: 1,
+            bgcolor: 'white',
+            '&:hover': { bgcolor: '#f5f5f5' },
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+        <AICopilot />
+      </Dialog>
     </Box>
   )
 }

@@ -127,19 +127,22 @@ export default function CopilotStory({ number, title, description, visual, showB
               {visual}
               {showButton && (
                 <Button
-                  variant="outlined"
+                  variant="contained"
                   onClick={onButtonClick}
                   sx={{
-                    color: '#7790de',
-                    borderColor: '#7790de',
-                    '&:hover': {
-                      borderColor: '#ed6a5a',
-                      color: '#ed6a5a',
-                      bgcolor: 'rgba(237, 106, 90, 0.05)',
-                    },
+                    background: 'linear-gradient(135deg, #7790de 0%, #ed6a5a 100%)',
+                    color: '#fff',
+                    fontSize: '1.125rem',
+                    padding: '12px 32px',
+                    borderRadius: '8px',
                     textTransform: 'none',
-                    fontSize: '1rem',
-                    padding: '8px 24px',
+                    fontWeight: 500,
+                    '&:hover': {
+                      background: 'linear-gradient(135deg, #6880ce 0%, #dc594a 100%)',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 8px 16px rgba(119, 144, 222, 0.3)',
+                    },
+                    transition: 'all 0.3s ease',
                   }}
                 >
                   See here
