@@ -1,5 +1,5 @@
-
 import { Box, Container, Typography } from '@mui/material'
+import logo from '../../assets/logo.png'
 import TypingAnimation from './TypingAnimation'
 
 export default function Hero() {
@@ -24,7 +24,7 @@ export default function Hero() {
             }}
           >
             <img
-              src="/src/assets/logo.png"
+              src={logo}
               alt="OpenEverest"
               style={{
                 maxWidth: '90%',

@@ -1,6 +1,8 @@
 
 import { Box, Container, Typography } from '@mui/material'
 import OpenSourceStory from './OpenSourceStory'
+import cncfLogo from '../../assets/logos/cncf-logo.svg'
+import everestLogo from '../../assets/logos/everest-white-full-color.svg'
 
 export default function OpenSourceSection({ sectionRef }) {
   const stories = [
@@ -31,7 +33,7 @@ export default function OpenSourceSection({ sectionRef }) {
             }}
           >
             <img
-              src="/src/assets/logos/cncf-logo.svg"
+              src={cncfLogo}
               alt="CNCF"
               style={{
                 width: '100%',
@@ -70,7 +72,7 @@ export default function OpenSourceSection({ sectionRef }) {
             }}
           >
             <img
-              src="/src/assets/logos/everest-white-full-color.svg"
+              src={everestLogo}
               alt="OpenEverest"
               style={{
                 width: '100%',
