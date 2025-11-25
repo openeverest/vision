@@ -48,7 +48,7 @@ export default function PluggableSection({ sectionRef }) {
           }}
         >
           <img
-            src="/src/assets/multi-db-visual-min.png"
+            src="/src/assets/multidb-scroll.gif"
             alt="Multi-Database Vision"
             style={{
               width: '100%',
