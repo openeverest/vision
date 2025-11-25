@@ -301,6 +301,18 @@ export default function MultiDatabase() {
                     sx={{
                       bgcolor: '#0E5FB5',
                       '&:hover': { bgcolor: '#0d54a3' },
+                      '@keyframes pulse': {
+                        '0%': {
+                          boxShadow: '0 0 0 0 rgba(14, 95, 181, 0.7)',
+                        },
+                        '70%': {
+                          boxShadow: '0 0 0 10px rgba(14, 95, 181, 0)',
+                        },
+                        '100%': {
+                          boxShadow: '0 0 0 0 rgba(14, 95, 181, 0)',
+                        },
+                      },
+                      animation: 'pulse 2s infinite',
                     }}
                   >
                     Create database
