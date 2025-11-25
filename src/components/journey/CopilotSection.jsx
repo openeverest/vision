@@ -241,15 +241,22 @@ export default function CopilotSection({ sectionRef }) {
         open={dialogOpen}
         onClose={() => setDialogOpen(false)}
         maxWidth={false}
-        fullWidth
         PaperProps={{
           sx: {
-            width: '95vw',
-            height: '95vh',
-            maxWidth: 'none',
-            maxHeight: 'none',
-            m: 0,
+            width: '90vw',
+            height: '90vh',
+            maxWidth: '1400px',
+            maxHeight: '900px',
+            borderRadius: '16px',
+            boxShadow: '0 24px 48px rgba(0, 0, 0, 0.4)',
             position: 'relative',
+            overflow: 'hidden',
+          }
+        }}
+        sx={{
+          '& .MuiBackdrop-root': {
+            backgroundColor: 'rgba(0, 0, 0, 0.75)',
+            backdropFilter: 'blur(4px)',
           }
         }}
       >
@@ -257,16 +264,23 @@ export default function CopilotSection({ sectionRef }) {
           onClick={() => setDialogOpen(false)}
           sx={{
             position: 'absolute',
-            right: 16,
-            top: 16,
-            zIndex: 1,
-            bgcolor: 'white',
-            '&:hover': { bgcolor: '#f5f5f5' },
+            right: 8,
+            top: 8,
+            zIndex: 10000,
+            bgcolor: 'rgba(255, 255, 255, 0.95)',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
+            '&:hover': {
+              bgcolor: '#fff',
+              transform: 'scale(1.1)',
+            },
+            transition: 'all 0.2s ease',
           }}
         >
-          <CloseIcon />
+          <CloseIcon sx={{ color: '#2C323E' }} />
         </IconButton>
-        <AICopilot />
+        <Box sx={{ height: '100%', overflow: 'auto' }}>
+          <AICopilot />
+        </Box>
       </Dialog>
     </Box>
   )
