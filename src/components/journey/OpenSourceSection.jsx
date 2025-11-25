@@ -85,7 +85,178 @@ export default function OpenSourceSection({ sectionRef }) {
     {
       number: 2,
       title: "Developer Empowerment",
-      description: "Open source accelerates innovation. From a developer and contributor perspective, it will take just a few days to add a new technology or integration, not months. The community can build awesome new plugins - whether it's a new database engine, monitoring integration, or deployment strategy. We provide the pluggable core; you bring the creativity and expertise to extend it in ways we haven't even imagined."
+      description: "Open source accelerates innovation. From a developer and contributor perspective, it will take just a few days to add a new technology or integration, not months. The community can build awesome new plugins - whether it's a new database engine, monitoring integration, or deployment strategy. We provide the pluggable core; you bring the creativity and expertise to extend it in ways we haven't even imagined.",
+      visual: (
+        <Box
+          sx={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 3,
+          }}
+        >
+          <Box
+            sx={{
+              width: '100%',
+              maxWidth: '600px',
+              background: 'rgba(22, 22, 65, 0.6)',
+              border: '1px solid rgba(119, 144, 222, 0.3)',
+              borderRadius: '12px',
+              overflow: 'hidden',
+            }}
+          >
+            {/* Header */}
+            <Box
+              sx={{
+                padding: '16px 20px',
+                borderBottom: '1px solid rgba(119, 144, 222, 0.2)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 2,
+              }}
+            >
+              <Typography
+                sx={{
+                  color: '#7790de',
+                  fontSize: '1.125rem',
+                  fontWeight: 600,
+                }}
+              >
+                percona/everest
+              </Typography>
+              <Box
+                sx={{
+                  padding: '4px 12px',
+                  background: 'rgba(119, 144, 222, 0.15)',
+                  borderRadius: '16px',
+                  fontSize: '0.75rem',
+                  color: '#7790de',
+                  fontWeight: 500,
+                }}
+              >
+                Public
+              </Box>
+            </Box>
+
+            {/* PR List */}
+            <Box sx={{ padding: 2 }}>
+              {[
+                { title: 'Add support for Valkey database engine', author: 'alex-chen', status: 'merged', type: 'feature' },
+                { title: 'Implement Prometheus metrics plugin', author: 'sarah-k', status: 'merged', type: 'plugin' },
+                { title: 'Add MinIO storage backend integration', author: 'dev-mike', status: 'open', type: 'integration' },
+                { title: 'Create Terraform provider for deployments', author: 'ops-ninja', status: 'merged', type: 'integration' },
+                { title: 'Add Weaviate vector database support', author: 'ml-enthusiast', status: 'open', type: 'feature' },
+              ].map((pr, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    padding: '12px 16px',
+                    marginBottom: 1,
+                    background: 'rgba(119, 144, 222, 0.05)',
+                    border: '1px solid rgba(119, 144, 222, 0.15)',
+                    borderRadius: '8px',
+                    transition: 'all 0.2s ease',
+                    '&:hover': {
+                      background: 'rgba(119, 144, 222, 0.1)',
+                      borderColor: 'rgba(119, 144, 222, 0.3)',
+                    }
+                  }}
+                >
+                  <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
+                    {/* Status Icon */}
+                    <Box
+                      sx={{
+                        marginTop: '2px',
+                        width: '16px',
+                        height: '16px',
+                        borderRadius: '50%',
+                        background: pr.status === 'merged' ? '#7790de' : '#ed6a5a',
+                        flexShrink: 0,
+                      }}
+                    />
+                    
+                    {/* Content */}
+                    <Box sx={{ flex: 1 }}>
+                      <Typography
+                        sx={{
+                          color: '#ededed',
+                          fontSize: '0.95rem',
+                          fontWeight: 500,
+                          marginBottom: 0.5,
+                        }}
+                      >
+                        {pr.title}
+                      </Typography>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap' }}>
+                        <Typography
+                          sx={{
+                            color: 'rgba(119, 144, 222, 0.7)',
+                            fontSize: '0.8rem',
+                          }}
+                        >
+                          by <Box component="span" sx={{ color: '#7790de', fontWeight: 500 }}>{pr.author}</Box>
+                        </Typography>
+                        <Box
+                          sx={{
+                            padding: '2px 8px',
+                            background: 'rgba(237, 106, 90, 0.15)',
+                            borderRadius: '12px',
+                            fontSize: '0.7rem',
+                            color: '#ed6a5a',
+                            fontWeight: 500,
+                          }}
+                        >
+                          {pr.type}
+                        </Box>
+                        <Typography
+                          sx={{
+                            color: pr.status === 'merged' ? '#7790de' : '#ed6a5a',
+                            fontSize: '0.75rem',
+                            fontWeight: 500,
+                          }}
+                        >
+                          {pr.status === 'merged' ? '✓ Merged' : '● Open'}
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+
+            {/* Footer */}
+            <Box
+              sx={{
+                padding: '12px 20px',
+                borderTop: '1px solid rgba(119, 144, 222, 0.2)',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <Typography
+                sx={{
+                  color: 'rgba(119, 144, 222, 0.7)',
+                  fontSize: '0.875rem',
+                }}
+              >
+                Community contributions
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#7790de',
+                  fontSize: '0.875rem',
+                  fontWeight: 600,
+                }}
+              >
+                150+ contributors
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      )
     },
     {
       number: 3,
