@@ -1,8 +1,8 @@
 
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, Typography, Button } from '@mui/material'
 import { useEffect, useState, useRef } from 'react'
 
-export default function CopilotStory({ number, title, description, visual }) {
+export default function CopilotStory({ number, title, description, visual, showButton, onButtonClick }) {
   const [isVisible, setIsVisible] = useState(false)
   const storyRef = useRef(null)
 
@@ -117,12 +117,34 @@ export default function CopilotStory({ number, title, description, visual }) {
                 flex: 1,
                 minHeight: { xs: '300px', md: '500px' },
                 display: 'flex',
+                flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
                 position: 'relative',
+                gap: 3,
               }}
             >
               {visual}
+              {showButton && (
+                <Button
+                  variant="outlined"
+                  onClick={onButtonClick}
+                  sx={{
+                    color: '#7790de',
+                    borderColor: '#7790de',
+                    '&:hover': {
+                      borderColor: '#ed6a5a',
+                      color: '#ed6a5a',
+                      bgcolor: 'rgba(237, 106, 90, 0.05)',
+                    },
+                    textTransform: 'none',
+                    fontSize: '1rem',
+                    padding: '8px 24px',
+                  }}
+                >
+                  See here
+                </Button>
+              )}
             </Box>
           </Box>
         </Box>

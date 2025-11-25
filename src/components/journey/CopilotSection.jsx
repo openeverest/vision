@@ -1,4 +1,3 @@
-
 import { Box, Container, Typography } from '@mui/material'
 import CopilotStory from './CopilotStory'
 
@@ -59,7 +58,8 @@ export default function CopilotSection({ sectionRef }) {
             ))}
           </Box>
         </Box>
-      )
+      ),
+      showButton: true
     },
     {
       number: 2,
@@ -226,6 +226,7 @@ export default function CopilotSection({ sectionRef }) {
               title={story.title}
               description={story.description}
               visual={story.visual}
+              showButton={story.showButton} 
             />
           ))}
         </Box>
