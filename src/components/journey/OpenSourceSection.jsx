@@ -14,15 +14,16 @@ export default function OpenSourceSection({ sectionRef }) {
             width: '100%',
             height: '100%',
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: 4,
+            gap: 3,
           }}
         >
           <Box
             sx={{
               flex: '0 0 auto',
-              maxWidth: '200px',
+              maxWidth: '250px',
               transition: 'transform 0.3s ease',
               '&:hover': {
                 transform: 'scale(1.05)',
@@ -42,7 +43,7 @@ export default function OpenSourceSection({ sectionRef }) {
           
           <Box
             sx={{
-              fontSize: '4rem',
+              fontSize: '3rem',
               color: '#ed6a5a',
               animation: 'heartbeat 1.5s ease-in-out infinite',
               '@keyframes heartbeat': {
@@ -61,7 +62,7 @@ export default function OpenSourceSection({ sectionRef }) {
           <Box
             sx={{
               flex: '0 0 auto',
-              maxWidth: '200px',
+              maxWidth: '250px',
               transition: 'transform 0.3s ease',
               '&:hover': {
                 transform: 'scale(1.05)',
