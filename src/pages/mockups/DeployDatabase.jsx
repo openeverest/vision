@@ -34,28 +34,28 @@ const deploymentTargets = [
   {
     name: 'AWS RDS',
     description: 'Amazon Relational Database Service',
-    logo: '🔶',
+    logo: '/src/assets/logos/aws-rds.png',
     available: true,
     provider: 'AWS',
   },
   {
     name: 'AWS Aurora',
     description: 'Amazon Aurora PostgreSQL',
-    logo: '🔷',
+    logo: '/src/assets/logos/aws-aurora.png',
     available: true,
     provider: 'AWS',
   },
   {
     name: 'Cloud SQL for PostgreSQL',
     description: 'Google Cloud managed PostgreSQL',
-    logo: '🔵',
+    logo: '/src/assets/logos/cloudsql.png',
     available: true,
     provider: 'Google Cloud',
   },
   {
     name: 'Neon',
     description: 'Serverless PostgreSQL',
-    logo: '⚡',
+    logo: '/src/assets/logos/neon.jpeg',
     available: false,
     provider: 'Neon',
     pluginRequired: true,
@@ -63,7 +63,7 @@ const deploymentTargets = [
   {
     name: 'Kubernetes',
     description: 'Self-managed on Kubernetes',
-    logo: '☸️',
+    logo: '/src/assets/logos/kubernetes.png',
     available: true,
     provider: 'Kubernetes',
   },
@@ -249,18 +249,21 @@ export default function DeployDatabase() {
                         {/* Logo */}
                         <Box
                           sx={{
-                            width: 80,
-                            height: 80,
+                            width: 60,
+                            height: 60,
                             margin: '0 auto 16px',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             bgcolor: '#f5f5f5',
                             borderRadius: 2,
-                            fontSize: '3rem',
                           }}
                         >
-                          {target.logo}
+                          <img 
+                            src={target.logo} 
+                            alt={target.name}
+                            style={{ maxWidth: '45px', maxHeight: '45px', objectFit: 'contain' }}
+                          />
                         </Box>
 
                         {/* Name and Description */}
