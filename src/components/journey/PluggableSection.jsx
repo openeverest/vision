@@ -3,6 +3,8 @@ import { Box, Container, Typography, Dialog, IconButton } from '@mui/material'
 import { Close as CloseIcon } from '@mui/icons-material'
 import PluggableStory from './PluggableStory'
 import MultiDatabase from '../../pages/mockups/MultiDatabase'
+import everest3dbs from '../../assets/everest-3dbs-min.png'
+import multidbScroll from '../../assets/multidb-scroll.gif'
 
 export default function PluggableSection({ sectionRef }) {
   const [dialogOpen, setDialogOpen] = useState(false)
@@ -21,7 +23,7 @@ export default function PluggableSection({ sectionRef }) {
           }}
         >
           <img
-            src="/src/assets/everest-3dbs-min.png"
+            src={everest3dbs}
             alt="Current Everest - Three Databases"
             style={{
               width: '100%',
@@ -48,7 +50,7 @@ export default function PluggableSection({ sectionRef }) {
           }}
         >
           <img
-            src="/src/assets/multidb-scroll.gif"
+            src={multidbScroll}
             alt="Multi-Database Vision"
             style={{
               width: '100%',

@@ -52,11 +52,11 @@ import { useNavigate } from 'react-router-dom'
 
 const DRAWER_WIDTH = 72
 
-// Helper function to get logo path
+// Helper function to get logo path - using dynamic imports for production compatibility
 const getLogoPath = (dbName) => {
   const logoName = dbName.toLowerCase().replace(/\s+/g, '-').replace(/\//g, '-')
   try {
-    return `/src/assets/logos/${logoName}.png`
+    return new URL(`../../assets/logos/${logoName}.png`, import.meta.url).href
   } catch {
     return null
   }

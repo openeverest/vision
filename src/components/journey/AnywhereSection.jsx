@@ -1,6 +1,7 @@
 
 import { Box, Container, Typography } from '@mui/material'
 import AnywhereStory from './AnywhereStory'
+import dokSurveyImage from '../../../attached_assets/image_1763988191457.png'
 
 export default function AnywhereSection({ sectionRef }) {
   const stories = [
@@ -26,7 +27,7 @@ export default function AnywhereSection({ sectionRef }) {
           }}
         >
           <img
-            src="/attached_assets/image_1763988191457.png"
+            src={dokSurveyImage}
             alt="Production DoK Workloads"
             style={{
               width: '100%',

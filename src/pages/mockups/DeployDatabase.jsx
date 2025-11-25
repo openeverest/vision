@@ -1,6 +1,12 @@
 
 import { useState } from 'react'
 import { ThemeProvider } from '@mui/material'
+import postgresLogo from '../../assets/logos/postgresql.png'
+import awsRdsLogo from '../../assets/logos/aws-rds.png'
+import awsAuroraLogo from '../../assets/logos/aws-aurora.png'
+import cloudsqlLogo from '../../assets/logos/cloudsql.png'
+import neonLogo from '../../assets/logos/neon.jpeg'
+import kubernetesLogo from '../../assets/logos/kubernetes.png'
 import {
   Box,
   Container,
@@ -34,28 +40,28 @@ const deploymentTargets = [
   {
     name: 'AWS RDS',
     description: 'Amazon Relational Database Service',
-    logo: '/src/assets/logos/aws-rds.png',
+    logo: awsRdsLogo,
     available: true,
     provider: 'AWS',
   },
   {
     name: 'AWS Aurora',
     description: 'Amazon Aurora PostgreSQL',
-    logo: '/src/assets/logos/aws-aurora.png',
+    logo: awsAuroraLogo,
     available: true,
     provider: 'AWS',
   },
   {
     name: 'Cloud SQL for PostgreSQL',
     description: 'Google Cloud managed PostgreSQL',
-    logo: '/src/assets/logos/cloudsql.png',
+    logo: cloudsqlLogo,
     available: true,
     provider: 'Google Cloud',
   },
   {
     name: 'Neon',
     description: 'Serverless PostgreSQL',
-    logo: '/src/assets/logos/neon.jpeg',
+    logo: neonLogo,
     available: false,
     provider: 'Neon',
     pluginRequired: true,
@@ -63,7 +69,7 @@ const deploymentTargets = [
   {
     name: 'Kubernetes',
     description: 'Self-managed on Kubernetes',
-    logo: '/src/assets/logos/kubernetes.png',
+    logo: kubernetesLogo,
     available: true,
     provider: 'Kubernetes',
   },
@@ -179,7 +185,7 @@ export default function DeployDatabase() {
                   }}
                 >
                   <img 
-                    src="/src/assets/logos/postgresql.png" 
+                    src={postgresLogo} 
                     alt="PostgreSQL"
                     style={{ maxWidth: '50px', maxHeight: '50px', objectFit: 'contain' }}
                   />
