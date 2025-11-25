@@ -70,7 +70,7 @@ const databaseCategories = {
     'SQLite', 'SAP HANA'
   ],
   'NoSQL Document': [
-    'MongoDB', 'DocumentDB', 'Couchbase', 'ArangoDB', 'RethinkDB'
+    'MongoDB', 'DocumentDB', 'Couchbase'
   ],
   'Key-Value & Caches': [
     'Redis', 'Valkey', 'Memcached', 'etcd'
@@ -88,7 +88,7 @@ const databaseCategories = {
     'Cassandra/K8ssandra', 'Apache HBase', 'ScyllaDB'
   ],
   'Cloud-Native Storage': [
-    'MinIO', 'OpenEBS', 'Ceph', 'GlusterFS', 'Portworx'
+    'MinIO', 'OpenEBS', 'Ceph', 'Portworx'
   ]
 }
 
