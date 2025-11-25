@@ -7,7 +7,79 @@ export default function OpenSourceSection({ sectionRef }) {
     {
       number: 1,
       title: "Foster Community",
-      description: "We're committed to true open source. Our plan is to donate OpenEverest to the Cloud Native Computing Foundation (CNCF) and guide it through the incubation process. This ensures the project remains community-driven, vendor-neutral, and aligned with cloud-native best practices. By joining the CNCF ecosystem, we'll connect with contributors, users, and organizations who share our vision for open data management."
+      description: "We're committed to true open source. Our plan is to donate OpenEverest to the Cloud Native Computing Foundation (CNCF) and guide it through the incubation process. This ensures the project remains community-driven, vendor-neutral, and aligned with cloud-native best practices. By joining the CNCF ecosystem, we'll connect with contributors, users, and organizations who share our vision for open data management.",
+      visual: (
+        <Box
+          sx={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 4,
+          }}
+        >
+          <Box
+            sx={{
+              flex: '0 0 auto',
+              maxWidth: '200px',
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.05)',
+              }
+            }}
+          >
+            <img
+              src="/src/assets/logos/cncf-logo.svg"
+              alt="CNCF"
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+          </Box>
+          
+          <Box
+            sx={{
+              fontSize: '4rem',
+              color: '#ed6a5a',
+              animation: 'heartbeat 1.5s ease-in-out infinite',
+              '@keyframes heartbeat': {
+                '0%, 100%': {
+                  transform: 'scale(1)',
+                },
+                '50%': {
+                  transform: 'scale(1.1)',
+                }
+              }
+            }}
+          >
+            ❤️
+          </Box>
+          
+          <Box
+            sx={{
+              flex: '0 0 auto',
+              maxWidth: '200px',
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.05)',
+              }
+            }}
+          >
+            <img
+              src="/src/assets/logos/everest-white-full-color.svg"
+              alt="OpenEverest"
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+          </Box>
+        </Box>
+      )
     },
     {
       number: 2,
