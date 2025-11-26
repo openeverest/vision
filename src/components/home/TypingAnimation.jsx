@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material'
 import { useState, useEffect } from 'react'
 
 export default function TypingAnimation() {
-  const phrases = ['pluggable', 'open source', 'truly anywhere', 'an AI copilot']
+  const phrases = ['extensible', 'open source', 'truly anywhere', 'an AI copilot']
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
   const [displayText, setDisplayText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)

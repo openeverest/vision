@@ -11,8 +11,8 @@ export default function PluggableSection({ sectionRef }) {
   const stories = [
     {
       number: 1,
-      title: "The Pluggable Vision",
-      description: "We're turning OpenEverest into a pluggable core, where databases, storage, and other technologies are plugins. We will see ClickHouse, Vitess, DocumentDB, Valkey, integration with Prometheus and other technologies coming soon.",
+      title: "The Modular Vision",
+      description: "We're turning OpenEverest into a Modular core, where databases, storage, and other technologies are plugins. We will see ClickHouse, Vitess, DocumentDB, Valkey, integration with Prometheus and other technologies coming soon.",
       visual: (
         <Box
           sx={{
@@ -40,7 +40,7 @@ export default function PluggableSection({ sectionRef }) {
     {
       number: 2,
       title: "Everything is a Plugin",
-      description: "Want to integrate with your favorite monitoring tool? It's a plugin. Need to sync data between database clusters of different vendors? Plugin. Custom backup solutions? Plugin. The plugin architecture means you're never locked into a single vendor's ecosystem - mix and match the tools that work best for your needs.",
+      description: "Want to integrate with your favorite monitoring tool? It's a plugin. Need to sync data between database clusters of different vendors? Plugin. Custom backup solutions? Plugin. The modular architecture means you're never locked into a single vendor's ecosystem - mix and match the tools that work best for your needs.",
       visual: (
         <Box
           sx={{
@@ -137,7 +137,7 @@ export default function PluggableSection({ sectionRef }) {
               fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
             }}
           >
-            Pluggable
+            Modular
           </Typography>
           <Typography
             sx={{
