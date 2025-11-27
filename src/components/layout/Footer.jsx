@@ -83,6 +83,57 @@ export default function Footer() {
             </Link>
           </Typography>
 
+          <Typography
+            sx={{
+              color: '#b8b8d1',
+              fontSize: { xs: '0.875rem', sm: '1rem' },
+              lineHeight: 1.8,
+              marginTop: 2,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 1,
+              flexWrap: 'wrap',
+            }}
+          >
+            <Box
+              component="span"
+              sx={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 1,
+              }}
+            >
+              <Box
+                component="span"
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  fontSize: '1.25rem',
+                }}
+              >
+                💬
+              </Box>
+              Join our community Slack at{' '}
+            </Box>
+            <Link
+              href="https://cloud-native.slack.com/archives/C09RRGZL2UX"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: '#7790de',
+                textDecoration: 'none',
+                fontWeight: 500,
+                transition: 'color 0.3s ease',
+                '&:hover': {
+                  color: '#ed6a5a',
+                },
+              }}
+            >
+              #everest
+            </Link>
+          </Typography>
+
           <Box
             sx={{
               marginTop: 6,
