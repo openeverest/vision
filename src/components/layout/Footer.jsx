@@ -1,5 +1,6 @@
 
 import { Box, Container, Typography, Link } from '@mui/material'
+import { Forum as ForumIcon } from '@mui/icons-material'
 
 export default function Footer() {
   return (
@@ -104,16 +105,12 @@ export default function Footer() {
                 gap: 1,
               }}
             >
-              <Box
-                component="span"
-                sx={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
+              <ForumIcon 
+                sx={{ 
+                  color: '#7790de',
                   fontSize: '1.25rem',
                 }}
-              >
-                💬
-              </Box>
+              />
               Join our community Slack at{' '}
             </Box>
             <Link
