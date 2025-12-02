@@ -127,7 +127,7 @@ export default function Footer() {
                 },
               }}
             >
-              CNCF - #everest-users
+              CNCF - #openeverest-users
             </Link>
           </Typography>
 
