@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from '@mui/material'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logos/logo-horizontal-full-color-dark-min.png'
 import TypingAnimation from './TypingAnimation'
 
 export default function Hero() {
