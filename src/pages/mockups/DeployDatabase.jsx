@@ -6,7 +6,7 @@ import awsAuroraLogo from '../../assets/logos/aws-aurora.png'
 import cloudsqlLogo from '../../assets/logos/cloudsql.png'
 import neonLogo from '../../assets/logos/neon.jpeg'
 import kubernetesLogo from '../../assets/logos/kubernetes.png'
-import everestLogo from '../../assets/logos/logo-horizontal-full-color-white-min.png' // Import the new logo
+import everestLogo from '../../assets/logos/logo-horizontal-full-color-white-min.png' 
 import {
   Box,
   Container,

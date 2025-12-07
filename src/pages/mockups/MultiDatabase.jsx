@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ThemeProvider } from '@mui/material'
-import everestLogo from '../../assets/logo-horizontal-full-color-white-min.png'
+import everestLogo from '../../assets/logos/logo-horizontal-full-color-white-min.png'
 import {
   Box,
   Container,

@@ -36,7 +36,7 @@ import {
   TrendingUp as TrendingUpIcon,
   Warning as WarningIcon,
 } from '@mui/icons-material'
-import everestLogo from '../../assets/logo-horizontal-full-color-white-min.png'
+import everestLogo from '../../assets/logos/logo-horizontal-full-color-white-min.png'
 
 const DRAWER_WIDTH = 72
 
