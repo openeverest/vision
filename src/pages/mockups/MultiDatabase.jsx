@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ThemeProvider } from '@mui/material'
+import everestLogo from '../../assets/logo-horizontal-full-color-white-min.png'
 import {
   Box,
   Container,
@@ -66,8 +67,8 @@ const mostPopular = ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'ElasticSearch',
 
 const databaseCategories = {
   'Relational (SQL)': [
-    'MySQL', 'PostgreSQL', 'MariaDB', 'Vitess', 'CockroachDB', 
-    'YugabyteDB', 'TiDB', 'Oracle Database', 'Microsoft SQL Server', 
+    'MySQL', 'PostgreSQL', 'MariaDB', 'Vitess', 'CockroachDB',
+    'YugabyteDB', 'TiDB', 'Oracle Database', 'Microsoft SQL Server',
     'SQLite', 'SAP HANA'
   ],
   'NoSQL Document': [
@@ -208,16 +209,7 @@ export default function MultiDatabase() {
           <Toolbar>
             {/* Everest Logo */}
             <Box component="a" href="/" sx={{ display: 'flex', alignItems: 'center' }}>
-              <svg width="160" height="40" viewBox="0 0 337 128" fill="none">
-                <rect width="128" height="128" rx="19.2" fill="url(#paint0_radial)" />
-                <path d="M63.9742 24L44.9306 56.9806H51.3673L63.9742 35.1474L95.8931 90.4258H32.0554L48.1486 62.5548H41.7119L38.4933 68.129H44.9298L41.7112 73.7032H35.2746L22.4 96H105.548L99.1111 84.8516H92.6746L89.4559 79.2774H95.8925L63.9742 24Z" fill="white" />
-                <defs>
-                  <radialGradient id="paint0_radial">
-                    <stop offset="0.333333" stopColor="#0E5FB5" />
-                    <stop offset="1" stopColor="#62AEFF" />
-                  </radialGradient>
-                </defs>
-              </svg>
+              <img src={everestLogo} alt="Everest Logo" style={{ height: '40px', width: 'auto' }} />
             </Box>
 
             <Box sx={{ flexGrow: 1 }} />
@@ -454,8 +446,8 @@ export default function MultiDatabase() {
         </Menu>
 
         {/* Create Database Dialog */}
-        <Dialog 
-          open={createDbOpen} 
+        <Dialog
+          open={createDbOpen}
           onClose={() => setCreateDbOpen(false)}
           maxWidth="md"
           fullWidth
@@ -479,8 +471,8 @@ export default function MultiDatabase() {
               <Grid container spacing={2}>
                 {mostPopular.map((db, index) => (
                   <Grid item xs={12} sm={6} md={4} key={index}>
-                    <Card 
-                      sx={{ 
+                    <Card
+                      sx={{
                         cursor: 'pointer',
                         transition: 'all 0.2s',
                         border: '1px solid #e0e0e0',
@@ -506,8 +498,8 @@ export default function MultiDatabase() {
                           }}
                         >
                           {getLogoPath(db) ? (
-                            <img 
-                              src={getLogoPath(db)} 
+                            <img
+                              src={getLogoPath(db)}
                               alt={db}
                               style={{ maxWidth: '50px', maxHeight: '50px', objectFit: 'contain' }}
                               onError={(e) => {
@@ -538,8 +530,8 @@ export default function MultiDatabase() {
                 <Grid container spacing={2}>
                   {databases.map((db, dbIndex) => (
                     <Grid item xs={12} sm={6} md={4} key={dbIndex}>
-                      <Card 
-                        sx={{ 
+                      <Card
+                        sx={{
                           cursor: 'pointer',
                           transition: 'all 0.2s',
                           border: '1px solid #e0e0e0',
@@ -565,8 +557,8 @@ export default function MultiDatabase() {
                             }}
                           >
                             {getLogoPath(db) ? (
-                              <img 
-                                src={getLogoPath(db)} 
+                              <img
+                                src={getLogoPath(db)}
                                 alt={db}
                                 style={{ maxWidth: '50px', maxHeight: '50px', objectFit: 'contain' }}
                                 onError={(e) => {

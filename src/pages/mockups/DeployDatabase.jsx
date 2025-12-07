@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { ThemeProvider } from '@mui/material'
 import postgresLogo from '../../assets/logos/postgresql.png'
@@ -7,6 +6,7 @@ import awsAuroraLogo from '../../assets/logos/aws-aurora.png'
 import cloudsqlLogo from '../../assets/logos/cloudsql.png'
 import neonLogo from '../../assets/logos/neon.jpeg'
 import kubernetesLogo from '../../assets/logos/kubernetes.png'
+import everestLogo from '../../assets/logos/logo-horizontal-full-color-white-min.png' // Import the new logo
 import {
   Box,
   Container,
@@ -94,16 +94,11 @@ export default function DeployDatabase() {
           <Toolbar>
             {/* Everest Logo */}
             <Box component="a" href="/" sx={{ display: 'flex', alignItems: 'center' }}>
-              <svg width="160" height="40" viewBox="0 0 337 128" fill="none">
-                <rect width="128" height="128" rx="19.2" fill="url(#paint0_radial)" />
-                <path d="M63.9742 24L44.9306 56.9806H51.3673L63.9742 35.1474L95.8931 90.4258H32.0554L48.1486 62.5548H41.7119L38.4933 68.129H44.9298L41.7112 73.7032H35.2746L22.4 96H105.548L99.1111 84.8516H92.6746L89.4559 79.2774H95.8925L63.9742 24Z" fill="white" />
-                <defs>
-                  <radialGradient id="paint0_radial">
-                    <stop offset="0.333333" stopColor="#0E5FB5" />
-                    <stop offset="1" stopColor="#62AEFF" />
-                  </radialGradient>
-                </defs>
-              </svg>
+              <img 
+                src={everestLogo} 
+                alt="OpenEverest" 
+                style={{ height: '32px', width: 'auto' }}
+              />
             </Box>
 
             <Box sx={{ flexGrow: 1 }} />
