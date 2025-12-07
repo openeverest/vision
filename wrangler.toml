@@ -1,6 +1,4 @@
 
 name = "openeverest-vision"
 compatibility_date = "2025-01-07"
-
-[site]
-bucket = "./dist"
+pages_build_output_dir = "dist"
