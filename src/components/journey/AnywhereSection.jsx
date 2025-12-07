@@ -1,7 +1,7 @@
 
 import { Box, Container, Typography } from '@mui/material'
 import AnywhereStory from './AnywhereStory'
-import dokSurveyImage from '../../../attached_assets/image_1763988191457.png'
+import dokSurveyImage from '../../assets/DoK-workloads.png'
 
 export default function AnywhereSection({ sectionRef }) {
   const stories = [
