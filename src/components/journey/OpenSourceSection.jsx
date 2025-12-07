@@ -2,7 +2,7 @@
 import { Box, Container, Typography } from '@mui/material'
 import OpenSourceStory from './OpenSourceStory'
 import cncfLogo from '../../assets/logos/cncf-logo.svg'
-import everestLogo from '../../assets/logos/logo-horizontal-full-color-white-min.png'
+import everestLogo from '../../assets/logos/logo-horizontal-full-color-dark-min.png'
 
 export default function OpenSourceSection({ sectionRef }) {
   const stories = [
