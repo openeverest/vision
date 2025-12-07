@@ -1,9 +1,13 @@
 
-import { Box, Container, Typography } from '@mui/material'
+import { useState } from 'react'
+import { Box, Container, Typography, Dialog, IconButton } from '@mui/material'
+import { Close as CloseIcon } from '@mui/icons-material'
 import AnywhereStory from './AnywhereStory'
 import dokSurveyImage from '../../assets/DoK-workloads.png'
 
 export default function AnywhereSection({ sectionRef }) {
+  const [imageDialogOpen, setImageDialogOpen] = useState(false)
+
   const stories = [
     {
       number: 1,
@@ -17,6 +21,7 @@ export default function AnywhereSection({ sectionRef }) {
       ),
       visual: (
         <Box
+          onClick={() => setImageDialogOpen(true)}
           sx={{
             width: '100%',
             maxWidth: '600px',
@@ -24,6 +29,12 @@ export default function AnywhereSection({ sectionRef }) {
             borderRadius: '16px',
             padding: 3,
             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+            cursor: 'pointer',
+            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+            '&:hover': {
+              transform: 'scale(1.02)',
+              boxShadow: '0 12px 40px rgba(0, 0, 0, 0.4)',
+            },
           }}
         >
           <img
@@ -142,6 +153,49 @@ export default function AnywhereSection({ sectionRef }) {
           ))}
         </Box>
       </Container>
+
+      <Dialog
+        open={imageDialogOpen}
+        onClose={() => setImageDialogOpen(false)}
+        maxWidth="lg"
+        fullWidth
+        PaperProps={{
+          sx: {
+            background: '#ffffff',
+            borderRadius: '16px',
+            maxWidth: '90vw',
+            maxHeight: '90vh',
+          },
+        }}
+      >
+        <IconButton
+          onClick={() => setImageDialogOpen(false)}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: '#161641',
+            background: 'rgba(255, 255, 255, 0.9)',
+            '&:hover': {
+              background: 'rgba(255, 255, 255, 1)',
+            },
+            zIndex: 1,
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+        <Box sx={{ padding: 2 }}>
+          <img
+            src={dokSurveyImage}
+            alt="Production DoK Workloads - Enlarged"
+            style={{
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+            }}
+          />
+        </Box>
+      </Dialog>
     </Box>
   )
 }
