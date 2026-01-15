@@ -126,7 +126,7 @@ export default function OpenSourceSection({ sectionRef }) {
                   fontWeight: 600,
                 }}
               >
-                percona/everest
+                openeverest/openeverest
               </Typography>
               <Box
                 sx={{

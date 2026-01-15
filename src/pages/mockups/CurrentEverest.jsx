@@ -221,10 +221,10 @@ export default function CurrentEverest() {
                           variant="text"
                           startIcon={<HelpOutlineOutlinedIcon />}
                           component="a"
-                          href="https://hubs.ly/Q02YRLsL0"
+                          href="https://openeverest.io/support/"
                           target="_blank"
                         >
-                          Contact Percona support
+                          Get help
                         </Button>
                       </Stack>
                     </TableCell>
@@ -242,18 +242,15 @@ export default function CurrentEverest() {
           <Typography variant="caption">Everest v1.9.0</Typography>
         </MenuItem>
         <Divider />
-        <MenuItem component="a" href="https://hubs.ly/Q02YRLsL0" target="_blank">
-          Percona Support
-        </MenuItem>
-        <MenuItem component="a" href="https://docs.percona.com/everest/" target="_blank">
-          Documentation
-        </MenuItem>
-        <MenuItem component="a" href="https://github.com/percona/everest/issues" target="_blank">
-          Report issue
-        </MenuItem>
-        <MenuItem component="a" href="https://forums.percona.com/c/percona-everest" target="_blank">
-          Forum
-        </MenuItem>
+        <MenuItem component="a" href="https://openeverest.io/#community" target="_blank">
+            Join community
+          </MenuItem>
+          <MenuItem component="a" href="https://openeverest.io/docs/" target="_blank">
+            Documentation
+          </MenuItem>
+          <MenuItem component="a" href="https://github.com/openeverest/openeverest/issues" target="_blank">
+            Report issue
+          </MenuItem>
       </Menu>
 
       {/* User Menu */}

@@ -67,7 +67,7 @@ export default function Footer() {
           >
             Want to collaborate or have questions? Feel free to open an issue or pull request at{' '}
             <Link
-              href="https://github.com/percona/everest"
+              href="https://github.com/openeverest/openeverest"
               target="_blank"
               rel="noopener noreferrer"
               sx={{
@@ -80,7 +80,7 @@ export default function Footer() {
                 },
               }}
             >
-              percona/everest
+              openeverest/openeverest
             </Link>
           </Typography>
 
