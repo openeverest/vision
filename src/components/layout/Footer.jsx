@@ -142,9 +142,28 @@ export default function Footer() {
               sx={{
                 color: 'rgba(184, 184, 209, 0.6)',
                 fontSize: '0.875rem',
+                lineHeight: 1.6,
               }}
             >
-              © {new Date().getFullYear()} OpenEverest. Open source database management at scale.
+              Copyright © OpenEverest a Series of LF Projects, LLC.
+              <br />
+              For website terms of use, trademark policy and other project policies please see{' '}
+              <Link
+                href="https://lfprojects.org/policies/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: 'rgba(184, 184, 209, 0.6)',
+                  textDecoration: 'none',
+                  transition: 'color 0.3s ease',
+                  '&:hover': {
+                    color: '#ededed',
+                  },
+                }}
+              >
+                lfprojects.org/policies/
+              </Link>
+              .
             </Typography>
           </Box>
         </Box>
